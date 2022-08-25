@@ -1,0 +1,89 @@
+<%- include('inc/header'); %>
+
+<body>
+    <div class="container-fluid">
+          <h1 class="my-5">JSON Minifier</h1>
+
+          <div class="row">
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                  <label for="html">JSON</label> 
+                  <textarea class="form-control" id="json" name="json" rows="25" style="width:100%;max-width:100%" required=""></textarea>
+                  </div>
+                  <button class="btn btn-primary mt-2" id="minifier" name="JSON Minifier">Minify</button>
+              </div>
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                      <label for="beautifiedCSS">Minified JSON</label> 
+                      <textarea class="form-control" id="minifiedJSON" name="minifiedJSON" rows="25" style="width:100%;max-width:100%" readonly=""></textarea>
+                  </div>
+                  <button class="btn btn-success my-2" id="copyToClipboard" onclick="copyBe()" name="copyToClipboard">Copy to clipboard</button>
+              </div>
+          </div>
+        
+          <div class="row mt-5 mx-5">
+            <div class="col-sm-8">
+                <h1>JSON Minifier</h1>
+                <p class="text-justify">Our online JSON Minifier tool is very simple to use. You can copy your compressed codes from the Minify field by pasting your JSON codes into the JSON field and clicking the Minify button.</p>
+                <p class="text-justify">In this way, the dimensions of your JSON projects work much faster and more stable with the online JSON minifier tool.</p>
+                <p class="text-justify">It is a tool to minify JSON codes in real time. removes spaces and indents, making it a small file.</p>
+
+                <h3>What is JSON ?</h3>
+                <p class="text-justify">JSON stands for JavaScript Object Notation.</p>
+                <p class="text-justify">JSON is a structure used to store data and move it between different platforms.</p>
+                <p class="text-justify">JSON is text written in JavaScript object notation format.</p>
+                <p class="text-justify">JSON is used to exchange data between different platforms regardless of the programming language.</p>
+                
+                <h4>Does JSON Minifier Online Tool log my data?</h4>
+                <p class="text-justify"><strong>No way!</strong> This JSON Minifier tool does all the formatting on the client side all jobs.</p>
+                <p class="text-justify">It is implemented by javascript so it never transmits your data to the open internet and is much faster than doing all the work on the server side.</p>
+            </div>
+            <div class="col-sm-4">
+                <h4>Other Tools</h4>
+                <div class="otherTools">
+                    <a href="/javascript-beautify" title="Beautify Javascript" class="tag">Beautify Javascript</a>
+                    <a href="/html-minifier" title="HTML Minify" class="tag">HTML Minify</a>
+                    <a href="/css-beautify" title="Beautify CSS" class="tag">Beautify CSS</a>
+                    <a href="/lua-minifier" title="Lua Minifier" class="tag">Lua Minifier</a>
+                    <a href="/decimal-to-binary" title="Decimal to Binary" class="tag">Decimal to Binary</a>
+                    <a href="/string-to-hex" title="String to Hex" class="tag">String to Hex</a>
+                    <a href="/binary-to-decimal" title="Binary to Decimal" class="tag">Binary to Decimal</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+    
+<script type="text/javascript" src="/assets/js/vkbeautify.js"></script>
+
+    
+<script>
+
+$( "#minifier" ).click(function() {
+var jsonmin = $("#json").val(); 
+var minifiedJSON = vkbeautify.jsonmin(jsonmin);
+$("#minifiedJSON").val(minifiedJSON);     
+
+});
+    
+    
+function copyBe() {
+
+  var copyText = document.getElementById("minifiedJSON");
+
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+
+
+  navigator.clipboard.writeText(copyText.value);
+
+
+  alert("Copied");
+}
+   
+</script>    
+</body>
+</html>

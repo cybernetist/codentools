@@ -1,0 +1,30 @@
+<%- include('inc/header'); %>
+<body>
+    <div class="container">
+          <h1 class="my-5">Decimal to Binary Converter</h1>
+
+          <div class="row">
+    <div class="container">
+        <form class="bg-light p-4">
+            <div class="form-group">
+                <label for="bin">Enter Decimal Number</label>
+                <input class="form-control" name="number" id="decimal" required="" placeholder="">
+            </div>
+            <div class="btn-wrap">
+            <span id="decToBin" class="btn btn-success">Convert to Binary</span>
+            <a href="/binary-to-decimal" id="swapBtn" class="btn">Swap(Binary to Decimal)</a>
+            </div>
+            <div class="form-group mt-5">
+                <label for="decimal">Binary Output</label>
+                <input class="form-control" type="text" name="words" id="binary" readonly="">
+            </div>
+
+        </form>
+    </div>
+</div>
+        
+         
+    </div>
+<script src="/assets/js/baseconvert.js"></script>
+</body>
+</html>

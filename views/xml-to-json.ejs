@@ -1,0 +1,56 @@
+<%- include('inc/header'); %>
+<script src="https://cdn.jsdelivr.net/npm/simply-beautiful@latest/dist/index.min.js"></script>
+<script type="text/javascript" src="xmltoJSON.min.js"></script>
+<body>
+    <div class="container-fluid">
+          <h1 class="my-5">XML TO JSON</h1>
+
+          <div class="row">
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                  <label for="xml">XML</label> 
+                  <textarea class="form-control" id="xml" name="xml" rows="25" style="width:100%;max-width:100%" required=""></textarea>
+                  </div>
+                  <button class="btn btn-primary mt-2" id="convert" name="convert">Convert</button>
+              </div>
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                      <label for="toJSON">JSON</label> 
+                      <textarea class="form-control" id="toJSON" name="toJSON" rows="25" style="width:100%;max-width:100%" readonly=""></textarea>
+                  </div>
+                  <button class="btn btn-success my-2" id="copyToClipboard" onclick="copyBe()" name="copyToClipboard">Copy to clipboard</button>
+              </div>
+          </div>
+         
+    </div>
+    
+<script>
+
+
+    
+$( "#convert" ).click(function() {
+var xml = $("#xml").val();
+var result = xmlToJSON.parseString(xml);    
+$("#toJSON").val(result);   
+});
+
+    
+function copyBe() {
+
+  var copyText = document.getElementById("toJSON");
+
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+
+
+  navigator.clipboard.writeText(copyText.value);
+
+
+  alert("Copied");
+}
+   
+</script>    
+</body>
+</html>
+

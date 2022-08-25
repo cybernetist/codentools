@@ -1,0 +1,87 @@
+<%- include('inc/header'); %>
+
+<body>
+    <div class="container-fluid">
+          <h1 class="my-5">XML Minifier</h1>
+
+          <div class="row">
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                  <label for="XML">XML</label> 
+                  <textarea class="form-control" id="xml" name="xml" rows="25" style="width:100%;max-width:100%" required=""></textarea>
+                  </div>
+                  <button class="btn btn-primary mt-2" id="minifier" name="XML Minifier">Minify</button>
+              </div>
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                      <label for="beautifiedCSS">Minified XML</label> 
+                      <textarea class="form-control" id="minifiedXML" name="minifiedXML" rows="25" style="width:100%;max-width:100%" readonly=""></textarea>
+                  </div>
+                  <button class="btn btn-success my-2" id="copyToClipboard" onclick="copyBe()" name="copyToClipboard">Copy to clipboard</button>
+              </div>
+          </div>
+        
+          <div class="row mt-5 mx-5">
+            <div class="col-sm-8">
+                <h1>XML Minifier</h1>
+                <p class="text-justify">Our online XML Minifier tool is incredibly simple to use. you'll copy your compressed codes from the Minify field by pasting your XML codes into the XML field and clicking the Minify button.</p>
+                <p class="text-justify">In this way, the size of your XML projects work much faster and more stable with the web XML minifier tool.</p>
+                <p class="text-justify">It is a tool to minify XML codes in real time. removes spaces and indents, making it small file.</p>
+
+                <h3>What is XML ?</h3>
+                <p class="text-justify">XML could be a text language. it's like programming languages ​​but has only certain functions. the most purpose of documents prepared with XML language, which might be read by both humans and operating systems, is to store and transfer data. Therefore, it is read by the majority devices and operating systems.</p>
+                <p class="text-justify">In this regard, websites may be shaped by using tags and attributes, which are simple code structures. XML can actually be called the skeleton of a web site. In other words, the web site can't be coded without XML codes.</p></p>
+
+                
+                <h4>Does XML Minifier Online Tool log my data?</h4>
+                <p class="text-justify"><strong>No way!</strong> This XML Minifier tool does all the formatting on the client side all jobs.</p>
+                <p class="text-justify">It is implemented by javascript so it never transmits your data to the open internet and is much faster than doing all the work on the server side.</p>
+            </div>
+            <div class="col-sm-4">
+                <h4>Other Tools</h4>
+                <div class="otherTools">
+                    <a href="/javascript-beautify" title="Beautify Javascript" class="tag">Beautify Javascript</a>
+                    <a href="/lua-minifier" title="Online Lua Minifier" class="tag">Online Lua Minifier</a>
+                    <a href="/css-beautify" title="Beautify CSS" class="tag">Beautify CSS</a>
+                    <a href="/json-minifier" title="JSON Minifier" class="tag">JSON Minifier</a>
+                    <a href="/decimal-to-binary" title="Decimal to Binary" class="tag">Decimal to Binary</a>
+                    <a href="/string-to-hex" title="String to Hex" class="tag">String to Hex</a>
+                    <a href="/binary-to-decimal" title="Binary to Decimal" class="tag">Binary to Decimal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+<script type="text/javascript" src="/assets/js/vkbeautify.js"></script>
+
+    
+<script>
+
+$( "#minifier" ).click(function() {
+var xmlmin = $("#xml").val(); 
+var minifiedXML = vkbeautify.xmlmin(xmlmin);
+$("#minifiedXML").val(minifiedXML);     
+
+});
+    
+    
+function copyBe() {
+
+  var copyText = document.getElementById("minifiedXML");
+
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+
+
+  navigator.clipboard.writeText(copyText.value);
+
+
+  alert("Copied");
+}
+   
+</script>    
+</body>
+</XML>

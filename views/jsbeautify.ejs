@@ -1,0 +1,82 @@
+<%- include('inc/header'); %>
+<script src="https://cdn.jsdelivr.net/npm/simply-beautiful@latest/dist/index.min.js"></script>
+
+<body>
+    <div class="container-fluid">
+          <h1 class="my-5">Beautify Javascript</h1>
+
+          <div class="row">
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                  <label for="html">Javascript</label> 
+                  <textarea class="form-control" id="javascript" name="javascript" rows="25" style="width:100%;max-width:100%" required=""></textarea>
+                  </div>
+                  <button class="btn btn-primary mt-2" id="beautify" name="Beautify">Beautify</button>
+              </div>
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                      <label for="beautifiedHtml">Beautified Javascript</label> 
+                      <textarea class="form-control" id="beautifiedJS" name="beautifiedJS" rows="25" style="width:100%;max-width:100%" readonly=""></textarea>
+                  </div>
+                  <button class="btn btn-success my-2" id="copyToClipboard" onclick="copyBe()" name="copyToClipboard">Copy to clipboard</button>
+              </div>
+          </div>
+             <div class="row mt-5 mx-5">
+    <div class="col-sm-8">
+        <h2>Javascript Beautify</h2>
+        <p class="text-justify">This online js beautifer tool is a tool that will allow you to format a raw javascript or compressed javascript file for easier reading. Your js file may be complex or compressed, in which case you need to use the js parser, that is, the js beautification tool.</p>
+        <p class="text-justify">For correct usage, paste your javascript code into the field that says Javascript and click the beautify button. On the right, the beautify javascript section will display beautified javascript codes.</p>
+        <h4>Does Javascript Beautifier Online Tool log my data?</h4>
+        <p class="text-justify"><strong>No way!</strong> This Javascript Beautifier tool does all the formatting on the client side all jobs.</p>
+        <p class="text-justify">It is implemented by javascript so it never transmits your data to the open internet and is much faster than doing all the work on the server side.</p>
+    </div>
+    <div class="col-sm-4">
+        <h4>Other Tools</h4>
+        <div class="otherTools">
+        
+            <a href="#" title="Bla Bla" class="tag">HTML Minify</a>
+            <a href="#" title="Bla Bla" class="tag">Beautify CSS</a>
+            <a href="#" title="Bla Bla" class="tag">JSON Minifier</a>
+            <a href="#" title="Bla Bla" class="tag">Decimal to Binary</a>
+            <a href="#" title="Bla Bla" class="tag">String to Hex</a>
+            <a href="#" title="Bla Bla" class="tag">Binary to Decimal</a>
+        </div>
+    </div>
+</div>
+    </div>
+    <br>
+<script>
+
+    var beautify = SimplyBeautiful();
+    var options = {
+  indent_size: 4,
+  space_before_conditional: true,
+  jslint_happy: true,
+  max_char: 0,
+}
+    
+$( "#beautify" ).click(function() {
+var javascript = $("#javascript").val();
+var beautifyJS = (beautify.js(javascript, options));
+$("#beautifiedJS").val(beautifyJS);   
+});
+
+    
+function copyBe() {
+
+  var copyText = document.getElementById("beautifiedJS");
+
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+
+
+  navigator.clipboard.writeText(copyText.value);
+
+
+  alert("Copied");
+}
+   
+</script>    
+</body>
+</html>

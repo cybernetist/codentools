@@ -1,0 +1,90 @@
+
+
+<%- include('inc/header'); %>
+
+
+<body>
+    <div class="container-fluid">
+          <h1 class="my-5">Lua Minifier</h1>
+
+          <div class="row">
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                  <label for="html">Lua Code</label> 
+                  <textarea class="form-control" id="lua" name="lua" rows="25" style="width:100%;max-width:100%" required="" placeholder="Example : for z = 1, 10 do
+  for y = 1, 10 do
+    for x = 1, 10 do
+      if x ^ 2 + y ^ 2 == z ^ 2 then
+        print('found a Pythagorean triple:', x, y, z)
+        goto done
+      end
+    end
+  end
+end
+::done::"></textarea>
+                  </div>
+                  <button class="btn btn-primary mt-2" id="minify" name="Minify Lua">Minify</button>
+              </div>
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                      <label for="beautifiedHtml">Minified Lua</label> 
+                      <textarea class="form-control" id="minifiedLua" name="minifiedLua" rows="25" style="width:100%;max-width:100%" readonly=""></textarea>
+                  </div>
+                  <button class="btn btn-success my-2" id="copyToClipboard" onclick="copyBe()" name="copyToClipboard">Copy to clipboard</button>
+              </div>
+          </div>
+
+          <div class="row mt-5 mx-5">
+            <div class="col-sm-8">
+                <h1>Lua Minifier</h1>
+                <p class="text-justify">Our online Lua Minifier tool is very simple to use. You can copy your compressed codes from the Minify field by pasting your Lua codes into the Lua field and clicking the Minify button.</p>
+                <p class="text-justify">In this way, the dimensions of your lua projects work much faster and more stable with the online lua minifier tool.</p>
+                <p class="text-justify">It is a tool to minify Lua codes in real time. removes spaces and indents, making it a small file.</p>
+
+                <h3>What is LUA ?</h3>
+                <p class="text-justify">Lua is a powerful, efficient and embedded scripting language. It supports object-oriented programming, functional programming, data-driven programming and data definition.</p>
+                <p class="text-justify">Lua programming has been a frequently preferred language because of its simple procedural syntax, relational data and a simple structure like python.</p>
+
+                
+                <h4>Does Lua Minifier Online Tool log my data?</h4>
+                <p class="text-justify"><strong>No way!</strong> This Lua Minifier tool does all the formatting on the client side all jobs.</p>
+                <p class="text-justify">It is implemented by javascript so it never transmits your data to the open internet and is much faster than doing all the work on the server side.</p>
+            </div>
+            <div class="col-sm-4">
+                <h4>Other Tools</h4>
+                <div class="otherTools">
+                    <a href="/javascript-beautify" title="Beautify Javascript" class="tag">Beautify Javascript</a>
+                    <a href="/html-minifier" title="HTML Minify" class="tag">HTML Minify</a>
+                    <a href="/css-beautify" title="Beautify CSS" class="tag">Beautify CSS</a>
+                    <a href="/json-minifier" title="JSON Minifier" class="tag">JSON Minifier</a>
+                    <a href="/decimal-to-binary" title="Decimal to Binary" class="tag">Decimal to Binary</a>
+                    <a href="/string-to-hex" title="String to Hex" class="tag">String to Hex</a>
+                    <a href="/binary-to-decimal" title="Binary to Decimal" class="tag">Binary to Decimal</a>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+     <script src="/assets/js/luamin.js"></script>
+  
+<script>
+
+function copyBe() {
+
+  var copyText = document.getElementById("minifiedLua");
+
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+
+
+  navigator.clipboard.writeText(copyText.value);
+
+
+  alert("Copied");
+}
+   
+</script>    
+</body>
+</html>
+

@@ -1,0 +1,100 @@
+body{
+
+}
+.navbar-brand{
+    font-size: 36px !important;
+    font-weight: 700;
+    color: #fff !important;
+}
+.bg-header{
+    background-color: #297195 !important;
+}
+.btn-run{
+    width: 100%;
+    min-height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    background: #838383;
+    border: unset;
+    color: #fff;
+}
+.btn-run:hover {
+    text-decoration: unset;
+    background: #297195;
+    color: #fff;
+}
+.btn-wrap{
+    display: flex;
+}
+#swapBtn{
+    display: block;
+    min-height: 38px;
+    margin-left: 10px;
+    color: #000;
+    background: #e1e1e1;
+    text-decoration: unset;
+    
+}
+
+button#beautify {
+    min-width: 300px;
+    min-height: 50px;
+    font-size: 20px;
+}
+button#minify {
+    min-width: 300px;
+    min-height: 50px;
+    font-size: 20px;
+}
+
+button#copyToClipboard {
+    min-width: 300px;
+    min-height: 50px;
+    font-size: 20px;
+}
+
+.tool-title{
+        color: #297195;
+    font-size: 23px;
+    font-weight: 500;
+}
+#video {
+ width: 500px;
+ height: 375px;
+ background: #ccc;
+}
+
+.form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    min-width: 500px;
+    background: #ffffff;
+    border-radius: 0;
+}
+
+.otherTools {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    border-radius: 8px;
+}
+.otherTools a {
+    margin-right: 5px;
+    margin-bottom: 16px;
+    background-color: #eee;
+    color: #626262;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: unset;
+    font-weight: 500;
+}
+
+textarea{
+    height: 300px;
+}

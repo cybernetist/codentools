@@ -1,0 +1,23 @@
+<%- include('inc/header'); %>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
+
+<body>
+<div class="conatiner-fluid mt-5 mx-5">
+    <h1 class="my-5">Excel to HTML</h1>
+    <div class="row">
+      <div class="card">
+          <div class="card-header">
+              <b>Select Excel File</b>
+          </div>
+          <div class="card-body">
+              <input type="file" id="excel_file">
+          </div>
+          <div id="excel_data" class="mt-5"></div>
+      </div>
+    </div>
+</div>
+</body>
+
+<script>
+   const excel_file=document.getElementById("excel_file");excel_file.addEventListener("change",a=>{if(!["application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","application/vnd.ms-excel"].includes(a.target.files[0].type))return document.getElementById("excel_data").innerHTML='<div class="alert alert-danger">Only .xlsx or .xls file format are allowed</div>',excel_file.value="",!1;var b=new FileReader;b.readAsArrayBuffer(a.target.files[0]),b.onload=function(i){var g=new Uint8Array(b.result),f=XLSX.read(g,{type:"array"}),h=f.SheetNames,d=XLSX.utils.sheet_to_json(f.Sheets[h[0]],{header:1});if(d.length>0){for(var a='<table class="table table-striped table-bordered">',c=0;c<d.length;c++){a+="<tr>";for(var e=0;e<d[c].length;e++)0==c?a+="<th>"+d[c][e]+"</th>":a+="<td>"+d[c][e]+"</td>";a+="</tr>"}a+="</table>",document.getElementById("excel_data").innerHTML=a}excel_file.value=""}})
+</script>

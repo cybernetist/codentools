@@ -1,0 +1,59 @@
+<%- include('inc/header'); %>
+
+<body>
+    <div class="container-fluid">
+          <h1 class="my-5">CSS Minifier</h1>
+
+          <div class="row">
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                  <label for="html">CSS</label> 
+                  <textarea class="form-control" id="css" name="css" rows="25" style="width:100%;max-width:100%" required=""></textarea>
+                  </div>
+                  <button class="btn btn-primary mt-2" id="minifier" name="CSS Minifier">Minify</button>
+              </div>
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                      <label for="beautifiedCSS">Minified CSS</label> 
+                      <textarea class="form-control" id="minifiedCSS" name="minifiedCSS" rows="25" style="width:100%;max-width:100%" readonly=""></textarea>
+                  </div>
+                  <button class="btn btn-success my-2" id="copyToClipboard" onclick="copyBe()" name="copyToClipboard">Copy to clipboard</button>
+              </div>
+          </div>
+        
+         
+    </div>
+
+    
+    
+<script type="text/javascript" src="/assets/js/vkbeautify.js"></script>
+
+    
+<script>
+
+$( "#minifier" ).click(function() {
+var cssS = $("#css").val(); 
+var minifiedCss = vkbeautify.cssmin(cssS);
+$("#minifiedCSS").val(minifiedCss);     
+
+});
+    
+    
+function copyBe() {
+
+  var copyText = document.getElementById("minifiedCSS");
+
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+
+
+  navigator.clipboard.writeText(copyText.value);
+
+
+  alert("Copied");
+}
+   
+</script>    
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "baseconvert": "^1.0.0",
+    "bootstrap": "^5.1.3",
+    "browserify": "^17.0.0",
+    "clean-css": "^5.3.1",
+    "csso": "^5.0.4",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "harp-minify": "^0.4.0",
+    "html-minifier": "^4.0.0",
+    "livescoreapi": "^1.0.0",
+    "luamin": "^1.0.4",
+    "minify": "^9.1.0",
+    "minimize": "^2.2.0",
+    "morgan": "^1.10.0",
+    "njs": "^0.0.2",
+    "nodemon": "^2.0.16",
+    "number-to-words": "^1.2.4",
+    "request": "^2.88.2",
+    "simply-beautiful": "^0.2.14",
+    "string-hex": "^1.0.0",
+    "the-minifier": "^1.2.2",
+    "try-to-catch": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cybernetist/NodeJs-Blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cybernetist/NodeJs-Blog/issues"
+  },
+  "homepage": "https://github.com/cybernetist/NodeJs-Blog#readme",
+  "description": ""
+}

@@ -1,0 +1,54 @@
+
+<%- include('inc/header'); %>
+<script src="https://cdn.jsdelivr.net/npm/simply-beautiful@latest/dist/index.min.js"></script>
+
+<body>
+    <div class="container-fluid">
+          <h1 class="my-5">Beautify JSON</h1>
+
+          <div class="row">
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                  <label for="JSON">JSON</label> 
+                  <textarea class="form-control" id="json" name="json" rows="25" style="width:100%;max-width:100%" required=""></textarea>
+                  </div>
+                  <button class="btn btn-primary mt-2" id="beautify" name="Beautify">Beautify</button>
+              </div>
+              <div class="col-md-6 text-center">
+                  <div class="form-group">
+                      <label for="beautifiedJSON">Beautified JSON</label> 
+                      <textarea class="form-control" id="beautifiedJSON" name="beautifiedJSON" rows="25" style="width:100%;max-width:100%" readonly=""></textarea>
+                  </div>
+                  <button class="btn btn-success my-2" id="copyToClipboard" onclick="copyBe()" name="copyToClipboard">Copy to clipboard</button>
+              </div>
+          </div>
+          <div class="row mt-5 mx-5">
+            <div class="col-sm-8">
+                <h2>JSON Beautify</h2>
+                <p class="text-justify">This online JSON beautifer tool is a tool that will allow you to format a raw JSON or compressed JSON file for easier reading. Your JSON file may be complex or compressed, in which case you need to use the JSON parser, that is, the JSON beautification tool.</p>
+                <p class="text-justify">For correct usage, paste your JSON code into the field that says JSON and click the beautify button. On the right, the beautify JSON section will display beautified JSON codes.</p>
+                <p class="text-justify">Online JSON Beautifer also beautifies css and javascript between style and script tags.</p>
+                <h4>Does JSON Beautifier Online Tool log my data?</h4>
+                <p class="text-justify"><strong>No way!</strong> This JSON Beautifier tool does all the formatting on the client side all jobs.</p>
+                <p class="text-justify">It is implemented by javascript so it never transmits your data to the open internet and is much faster than doing all the work on the server side.</p>
+            </div>
+            <div class="col-sm-4">
+                <h4>Other Tools</h4>
+                <div class="otherTools">
+                    <a href="/javascript-beautify" title="Beautify Javascript" class="tag">Beautify Javascript</a>
+                    <a href="/html-minifier" title="HTML Minify" class="tag">HTML Minify</a>
+                    <a href="/css-beautify" title="Beautify CSS" class="tag">Beautify CSS</a>
+                    <a href="/json-minifier" title="JSON Minifier" class="tag">JSON Minifier</a>
+                    <a href="/decimal-to-binary" title="Decimal to Binary" class="tag">Decimal to Binary</a>
+                    <a href="/string-to-hex" title="String to Hex" class="tag">String to Hex</a>
+                    <a href="/binary-to-decimal" title="Binary to Decimal" class="tag">Binary to Decimal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<script>
+var beautify=SimplyBeautiful(),options={indent_size:4,space_before_conditional:!0,jslint_happy:!0,max_char:0};function copyBe(){var a=document.getElementById("beautifiedJSON");a.select(),a.setSelectionRange(0,99999),navigator.clipboard.writeText(a.value),alert("Copied")}$("#beautify").click(function(){var a=$("#json").val(),b=beautify.json(a,options);$("#beautifiedJSON").val(b)})
+</script>    
+</body>
+</JSON>

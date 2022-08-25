@@ -1,0 +1,55 @@
+<%- include('inc/header'); %>
+<body>
+    <div class="container">
+          <h1 class="my-5">Number to Words</h1>
+
+          <div class="row">
+    <div class="container">
+        <form class="bg-light p-4">
+            <div class="form-group">
+                <label for="number">Numeric value</label>
+                <input class="form-control" type="number" max="2000000000" min="-1000000000" name="number" id="numberInput" required="" placeholder="Type any amount here (ex: 2523.04)">
+            </div>
+            <div class="form-group">
+                <label for="words">Number into words</label>
+                <textarea class="form-control" type="text" name="words" id="stringOutput" readonly="" style="min-height:222px"></textarea>
+            </div>
+
+        </form>
+    </div>
+               
+    <div id="stringOutput"></div>
+              
+              
+            
+</div>
+        
+         
+    </div>
+    
+      <div class="container-fluid">
+         <div class="row mt-5 mx-5">
+    <div class="col-sm-8">
+        <h2>Number to Words Converter</h2>
+        <p class="text-justify">Number to Words Converter is a tool that you can use to instantly convert numbers to strings.</p>
+        <p class="text-justify">By entering the number in the field that says Numeric value, you can see the string you entered in the Number into words field.</p>
+  
+    </div>
+    <div class="col-sm-4">
+        <h4>Other Tools</h4>
+        <div class="otherTools">
+        <a href="#" title="Bla Bla" class="tag">Beautify Javascript</a>
+            <a href="#" title="Bla Bla" class="tag">HTML Minify</a>
+            <a href="#" title="Bla Bla" class="tag">Beautify CSS</a>
+            <a href="#" title="Bla Bla" class="tag">JSON Minifier</a>
+            <a href="#" title="Bla Bla" class="tag">Decimal to Binary</a>
+            <a href="#" title="Bla Bla" class="tag">String to Hex</a>
+            <a href="#" title="Bla Bla" class="tag">Binary to Decimal</a>
+        </div>
+    </div>
+</div>          
+    </div>   
+   <script src="/assets/js/numtoword.js"></script>
+
+</body>
+</html>
